@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-v05-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project-v05
+  template:
+    metadata:
+      labels:
+        app: project-v05
+    spec:
+      containers:
+        - name: project-v05
+          image: draganculibrk9/project-v05:latest
+          env:
+          - name: PORT
+            value: "3000"
