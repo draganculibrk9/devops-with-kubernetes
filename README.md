@@ -1,2 +1,3 @@
-"# devops-with-kubernetes" 
-"# devops-with-kubernetes" 
+# DevOps with Kubernetes
+
+Repository for course [DevOps with Kubernetes](https://devopswithkubernetes.com/) of University of Helsinki
