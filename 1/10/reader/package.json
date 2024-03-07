@@ -1,0 +1,15 @@
+{
+  "name": "log-output-reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Dragan Ćulibrk",
+  "license": "ISC",
+  "dependencies": {
+    "random-hash": "4.0.1"
+  }
+}

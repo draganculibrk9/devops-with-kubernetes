@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-outputs-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-outputs
+  template:
+    metadata:
+      labels:
+        app: log-outputs
+    spec:
+      volumes:
+        - name: shared-timestamp
+          emptyDir: {}
+      containers:
+        - name: log-output-reader
+          image: draganculibrk9/log-output-reader:latest
+          volumeMounts:
+            - name: shared-timestamp
+              mountPath: /usr/src/app/files
+        - name: log-output-writer
+          image: draganculibrk9/log-output-writer:latest
+          volumeMounts:
+            - name: shared-timestamp
+              mountPath: /usr/src/app/files
