@@ -1,0 +1,16 @@
+{
+  "name": "log-output",
+  "version": "1.1.0",
+  "description": "Random hash generator",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Dragan Ćulibrk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.18.3",
+    "random-hash": "4.0.1"
+  }
+}
