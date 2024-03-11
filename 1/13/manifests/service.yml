@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: project-v07-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: project-v07
+  ports:
+    - port: 8081
+      protocol: TCP
+      targetPort: 3000

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-v07-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project-v07
+  template:
+    metadata:
+      labels:
+        app: project-v07
+    spec:
+      volumes:
+        - name: exercise-pv
+          persistentVolumeClaim:
+            claimName: exercise-pvc
+      containers:
+        - name: project-v07
+          image: draganculibrk9/project-v07:latest
+          volumeMounts:
+            - name: exercise-pv
+              mountPath: /usr/src/app/files

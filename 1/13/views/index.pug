@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Simple HTML Page
+  body
+    h1 Hello, world!
+    p This is a simple HTML page served by an Express server.
+    img(src= image, width="300", height="300")
+    form(action='/')
+      input(type='text', name='todo', maxLength='140')
+      button(type='submit') Create TODO
+    ul
+      li TODO1
+      li TODO2
+
