@@ -7,13 +7,12 @@ const moment = require('moment');
 
 const app = express();
 
-app.use(express.static('/images'));
-app.set('view engine', 'pug');
-
-const port = 3000;
-
+const PORT = 3000;
 const RANDOM_IMAGE_URL = 'https://picsum.photos/1200';
-const IMAGE_DIRECTORY = './images'//'/usr/src/app/files';
+const IMAGE_DIRECTORY = '/usr/src/app/files/images';
+
+app.use(express.static('./images'));
+app.set('view engine', 'pug');
 
 const getRandomImage = async () => {
     const response = await axios.get(RANDOM_IMAGE_URL, {responseType: 'arraybuffer'});
@@ -28,6 +27,8 @@ const getRandomDailyImage = async () => {
     
     if (fsSync.existsSync(imageFile)) {
         return;
+    } else {
+        await fs.mkdir(IMAGE_DIRECTORY);
     }
 
     const image = await getRandomImage();
@@ -41,6 +42,6 @@ app.get('/', async (_, res) => {
     res.render('index', {image: `./${today}.jpeg`});
 })
 
-app.listen(port, () => {
-    console.log(`Server started in port ${port}`)
+app.listen(PORT, () => {
+    console.log(`Server started in port ${PORT}`)
 })
