@@ -4,4 +4,4 @@ metadata:
   namespace: exercise-namespace
   name: log-output-configmap
 data:
-  message: "Hello"
+  message: "Hello world!"
